@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>org.example</groupId>
-	<artifactId>kotlinurl</artifactId>
+	<artifactId>urlshortener</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<name>kotlinurl</name>
+	<name>urlshortener</name>
 	<description>Simple Url shortener written in Kotlin</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,6 +22,9 @@
 		<native.maven.plugin.version>0.9.28</native.maven.plugin.version>
 		<commons-validator.version>1.7</commons-validator.version>
 		<com.google.guava.version>11.0</com.google.guava.version>
+		<org.testcontainers.version>1.19.1</org.testcontainers.version>
+		<redis.client.version>4.4.1</redis.client.version>
+		<org.testcontainers.redis.version>1.6.4</org.testcontainers.redis.version>
 	</properties>
 
 	<dependencies>
@@ -48,13 +51,38 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<!-- Tests -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>testcontainers</artifactId>
+			<version>${testcontainers.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>${testcontainers.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${redis.client.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.redis.testcontainers</groupId>
+			<artifactId>testcontainers-redis-junit</artifactId>
+			<version>${org.testcontainers.redis.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-		<!-- Utils	-->
+		<!-- Utils -->
 		<dependency>
 			<groupId>commons-validator</groupId>
 			<artifactId>commons-validator</artifactId>

@@ -1,4 +1,5 @@
 !target/urlshortener
+!target/urlshortener.exe
 !**/src/main/**/target/
 !**/src/test/**/target/
 
